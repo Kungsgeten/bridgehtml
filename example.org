@@ -1,0 +1,94 @@
+#+INCLUDE: bridgehtml.org
+
+#+TITLE: My strong club
+
+* Introduction
+
+This is a level one headline, it will show up on export. Here's some links to
+sections that will not show up, but if you click on them they'll show:
+
+- [[Preempts]]
+- [[Relays]]
+  
+** Preempts
+
+We play sound preempts. This level two headline will not show until a link to it is clicked.
+
+** Relays
+
+We do not play relays. This level two headline will not show until a link to it is clicked.
+
+* The 1!c opening
+
+Here's an example of a bidding tree. Before the tree we have two column table
+where the last cell ends in a question mark. This notes that the bidding tree
+will describe uncontested bidding, and what have happened up to this point in
+the auction.
+
+Each level in the bidding tree is a bid, where the next level are responses to
+that bid, and so on. The bid itself is written as the /term/ (before the ~::~) while
+the description describes what the bid means. You can put linebreaks in the
+description by using two backslashes. You can put indented text as new
+paragraphs after a bid, before the continuations, to provide more details of the
+descriptions. These will be hidden by default when exported, but can be
+expanded.
+
+| Opener | Resp |
+|--------+------|
+| 1!c     | ?    |
+
+- 1!d :: Negative, 0--7 hcp.
+  - 1!h :: 20+ hcp.
+    - 1!s :: Second negative.
+      - 1NT :: NF.
+      - 2!c :: GF.
+      - Other :: NF.
+    - Other :: Natural GF.
+  - 1!s :: 4+!s, may have longer side-suit. 16--19.
+  - 1NT :: 17--19 NT.
+  - 2!c!d!h :: Natural, not 4!s. 16--19.
+- 1!h :: 12+ hcp.\\
+       Opener rebids as 1!s+ below.
+
+    With 12 hcp we'll have to determine if the hand is good or bad, choosing to
+    respond 1!h or a higher bid.
+
+- 1!s :: Not 5+M, not 6+m, not 5-5 minors. 8--12 hcp. [[Relays]]
+- 1NT :: 5+!h, 8--12 hcp. 
+- 2!c :: 5+!s, 8--12 hcp.
+- 2!d :: 6+!c, 8--12 hcp.
+- 2!h :: 6+!d, 8--12 hcp.
+- 2!s :: 5-5 minors, 8--12 hcp.
+- 2NT :: 5-5 majors, 8--12 hcp.
+
+* Contested bidding
+
+If you have a four column table it describes contested bidding. You write the
+opponents' bids inside parentheses. Example when they overcall 1!d:
+
+| Opener |   | Resp |   |
+|--------+---+------+---|
+| 1!d     | ? |      |   |
+
+- (Dbl) :: Takeout?
+  - Rdbl :: 4+!h.
+    - (Bid) :: Fourth hand bids.
+      - Dbl :: Support double if the bid is below 2!h.
+    - 1!h :: Balanced, 2--3 hearts. (Indicates that fourth hand passed).
+  - 1!h :: 4+!s. Same principle as above.
+- (1!h) :: Heart overcall.
+
+Here's another example when they open:
+
+| Opener |   | Resp |   |
+|--------+---+------+---|
+| (1NT)  | ? |      |   |
+
+- 2!c :: Majors.
+  - (Dbl) :: Strength?
+    - Pass :: Suggests playing 2!c doubled.
+    - Rdbl :: Please bid your better major.
+    - 2!d :: To play.
+  - 2!d :: Bid your best major.
+  - 2!h!s :: To play.
+- 2!d!h!s :: Natural.

@@ -1,0 +1,43 @@
+#+TITLE: Bridge HTML
+
+* Introduction
+
+Bridge HTML provides a way to create and present contract bridge bidding notes
+online. The notes are written in [[https://orgmode.org][Org mode]] in [[https://emacs.org/][Emacs]] and can then be exported to
+HTML, displaying them in a nice way using some JavaScript and CSS. Here's an
+example of the end result: [[http://snortingmaradonas.se/erik/mysystem/lakebeach_nt.html][Lakebeach NT]].
+
+* Setup
+
+From this repository you need ~bridgehtml.js~, ~bridgehtml.css~ and ~bridgehtml.org~.
+You also need to create an Org mode file in which you'll write your notes, for
+instance ~mysystem.org~. Place these files in the same directory, and put the
+following line at the top of your system note file:
+
+#+BEGIN_EXAMPLE
+  ,#+INCLUDE: bridgehtml.org
+#+END_EXAMPLE
+
+* Writing
+
+The system notes are written with standard Org mode syntax, but with some special features:
+
+- Writing !c !d !h and !s will export to suit symbols (like on BBO and Bridge Winners).
+- Level two headlines will be hidden in the HTML, but will show up if you click an internal link to them.
+- Description lists will turn into an expandable /bidding tree/, where the term is
+  the bid and the description is the explanation. You can also zoom in on bids.
+- A two or four column table before a description list, where the last cell
+  contains a question mark, can be used to show the bids up to the point of
+  bidding described in the bidding tree.
+- Some abbreviations will show up as small caps when exported. To change these,
+  have a look at ~bridgehtml.org~.
+
+Please have a look at the ~example.org~ file in this repository.
+
+* Exporting
+
+There's nothing special going on when exporting. The default Emacs key binding
+is ~C-c C-e h h~. You can also use ~M-x org-html-export-to-html~.
+
+If you intend to display the notes online, upload the resulting ~html~ file along
+with ~bridgehtml.js~ and ~bridgehtml.css~.

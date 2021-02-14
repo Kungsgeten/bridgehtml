@@ -1,0 +1,64 @@
+# Turn off default internal styles, TOC, numbering and postamble
+#+OPTIONS: toc:nil num:nil html-postamble:nil html-style:nil html5-fancy:t
+
+# Export to HTML5
+#+HTML_DOCTYPE: html5
+#+HTML_HEAD: <meta http-equiv="X-UA-Compatible" content="IE=edge">
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
+
+# Depencies: font-awesome and jQuery
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+#+HTML_HEAD_EXTRA: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+# CSS and JS
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="bridgehtml.css">
+#+HTML_HEAD_EXTRA: <script src="bridgehtml.js"></script>
+
+# Replace Bridge notatiton and abbrevs
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (cl-flet ((span (class text)
+                  (format "@@html:%s@@"
+                          (xmlgen `(span :class ,class ,text)))))
+    (org-with-wide-buffer
+     (goto-char (point-min))
+     (save-excursion
+       (while (re-search-forward "!c" nil t)
+         (replace-match (span "club" "♣") t)))
+     (save-excursion
+       (while (re-search-forward "!d" nil t)
+         (replace-match (span "diamond" "♦") t)))
+     (save-excursion
+       (while (re-search-forward "!h" nil t)
+         (replace-match (span "heart" "♥") t)))
+     (save-excursion
+       (while (re-search-forward "!s" nil t)
+         (replace-match (span "spade" "♠") t)))
+     (save-excursion
+       (while (re-search-forward "[[:digit:]]\\(nt\\)" nil t)
+         (replace-match (span "abbrev" "nt") t nil nil 1)))
+
+     (let ((case-fold-search nil)
+           (abbrevs '("BAL"
+                      "OBAL"
+                      "UNBAL"
+                      "SEMIBAL"
+                      "ART"
+                      "NAT"
+                      "LTC"
+                      "GF"
+                      "VUL"
+                      "SPL"
+                      "NF"
+                      "INV"
+                      "HCP"
+                      "UK"
+                      "UD"
+                      "SD"
+                      "ÖH"
+                      "NT"
+                      "SH")))
+       (dolist (abbrev abbrevs)
+         (save-excursion
+           (while (re-search-forward (format "\\b%s\\b" abbrev) nil t)
+             (replace-match (span "abbrev" (downcase abbrev)) t)))))))
+#+END_SRC

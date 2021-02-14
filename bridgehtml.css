@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,400i,700");
+body {
+  margin: 0;
+  body: 0;
+  font-family: 'Alegreya', serif;
+  line-height: 1.5;
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 25px;
+  }
+}
+#content {
+  margin-left: 1.8em;
+  margin-right: 0.5em;
+}
+p,
+ul,
+ol {
+  max-width: 28em;
+}
+h2 {
+  padding-top: 2.4em;
+  margin-top: -2em;
+}
+h3 {
+  padding-top: 2.4em;
+  margin-top: -2em;
+}
+table {
+  margin: 1em 0px;
+}
+table caption {
+  font-family: 'Alegreya SC';
+  font-weight: bold;
+  border-bottom-style: solid;
+}
+table th,
+table td {
+  padding: 0px 15px;
+}
+a {
+  text-decoration: none;
+  text-transform: lowercase;
+  font-family: 'Alegreya SC';
+  letter-spacing: 1px;
+  color: #800000;
+}
+a:hover {
+  background-color: #eee;
+}
+a::before {
+  content: "\000AB";
+}
+a::after {
+  content: "\000BB";
+}
+header {
+  margin: 0px;
+}
+header .title {
+  margin: 0px;
+  padding: 0px;
+}
+#preamble {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
+  width: 100%;
+  z-index: 10;
+}
+nav {
+  font-family: 'Alegreya SC';
+  margin: 0px;
+  padding-left: 0.5em;
+  border-bottom: solid 1px;
+}
+nav a::before {
+  content: "";
+}
+nav a::after {
+  content: "";
+}
+nav ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+.club {
+  color: #00008b;
+}
+.diamond {
+  color: #ff4500;
+}
+.heart {
+  color: #f00;
+}
+.spade {
+  color: #000;
+}
+.bidding {
+  padding: 0px;
+  width: 6em;
+}
+.bidding th,
+.bidding td {
+  text-align: center;
+}
+dl {
+  margin: 0px;
+  margin-bottom: 0.5em;
+}
+dt {
+  display: block;
+  float: left;
+  min-width: 3em;
+}
+.zoomable {
+  cursor: zoom-in;
+}
+dd {
+  display: block;
+  margin-left: 0em;
+  margin-inline-start: 0px;
+}
+dd > dl {
+  padding-left: 3em;
+  border-left-style: dotted;
+  border-left-color: #aaa;
+}
+dd .indent-spacer {
+  display: inline-block;
+  width: 2.8em;
+}
+.tree-toggle,
+.desc-toggle,
+.zoomout,
+.sectionclose {
+  color: #aaa;
+  font-size: 22px;
+  cursor: pointer;
+}
+.tree-toggle:hover,
+.desc-toggle:hover,
+.zoomout:hover,
+.sectionclose:hover {
+  color: #555;
+}
+.sectionclose {
+  position: relative;
+  right: 1.3em;
+  margin-right: -1.3em;
+  top: 2em;
+}
+.tree-toggle {
+  display: inline;
+  float: left;
+  position: relative;
+  right: 1.3em;
+  top: 0.35em;
+  margin-right: -1em;
+}
+.desc-toggle {
+  padding-left: 0.5em;
+}
+.zoomout {
+  position: relative;
+  right: 1.3em;
+  margin-bottom: -1.5em;
+  bottom: 1.5em;
+}
+.description {
+  font-size: 85%;
+  display: none;
+  border-left: solid 5px #4d4dff;
+  padding: 0.5em 1em;
+  max-width: 28em;
+  background-color: #f0f0ff;
+}
+.description > p {
+  margin-top: 0.6em;
+  margin-bottom: 0px;
+}
+.description > p:first-child {
+  margin-top: 0px;
+}
+.timestamp {
+  color: #228b22;
+}
+.abbrev {
+  font-family: 'Alegreya SC';
+  text-transform: lowercase;
+}
+.table-number {
+  display: none;
+}
+.sc {
+  font-family: 'Alegreya SC';
+  text-transform: lowercase;
+}
+.outline-2 {
+  border-top: solid;
+}
